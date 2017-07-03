@@ -29,5 +29,12 @@
     color: #0f0f0f;
 }
 .about{
-    padding: 0px 0px 50px 0px;
+    padding: 50px 0px 50px 0px;
+}
+.body{
+    padding: 50px 0px 0px 0px;
+    z-index: 0;
+}
+.navbar-inverse{
+    background-color: #512DA8;
 }
