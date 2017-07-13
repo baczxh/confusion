@@ -31,7 +31,7 @@
                   <li class="nav-item" ><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span>Contact</a></li>
                </ul>
                <span class="navbar-text">
-                   <a data-toggle="modal" data-target="#loginModal">
+                   <a id="loginlink">
                        <span class="fa fa-sign-in"></span>Login</a>
                </span>
             </div>
@@ -156,9 +156,9 @@
                       </div>
                     </div>
                 </div>
-                <div class="modal-footer">
-                        <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary btn-sm" >Reserve</button>
+                <div class="modal-footer" >
+                        <button type="button" class="btn btn-default btn-sm" data-dismiss="modal" >Cancel</button>
+                        <button type="submit" class="btn btn-primary btn-sm mr-auto" >Reserve</button>
                 </div>
             </div>
         </div>
@@ -175,7 +175,7 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col col-sm-3 align-self-center" >
-                    <a class="btn btn-block bg-warning btn-sm" data-toggle="modal" data-target="#reserveModal">Reserve Table</a>
+                    <a  class="btn btn-block bg-warning btn-sm" id="btnreserve">Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -332,7 +332,32 @@
     <script src="node_modules/tether/dist/js/tether.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     
-    <script src="js/scripts.js"></script>
+    <script >
+        $(document).ready(function(){
+            $("#myCarousel").carousel({interval:2000});
+            $("#carousel-button").click(function(){
+                 if($('#carousel-button').children('span').hasClass('fa-pause')){
+                     $("#myCarousel").carousel('pause');
+                     $('#carousel-button').children('span').removeClass('fa-pause');
+                     $('#carousel-button').children('span').addClass('fa-play');
+                 }
+                 else{
+                     $("#myCarousel").carousel('cycle');
+                     $('#carousel-button').children('span').removeClass('fa-play');
+                     $('#carousel-button').children('span').addClass('fa-pause');
+                 }
+                 
+            });
+            $("#btnreserve").click(function(){
+                $("#reserveModal").modal();
+                   
+            });
+            $("#loginlink").click(function(){
+                $("#loginModal").modal();
+            });
+            
+        });
+    </script>
 <!-- endbuild -->
         
 </body>
